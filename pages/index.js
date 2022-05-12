@@ -6,11 +6,12 @@ export default function Home() {
   return (
     <>
       <Flex
-        bgImage="/images/bgfoto.jpg"
+        bgImage="/images/bgfoto3.jpg"
         w="100%"
         bgRepeat="no-repeat"
         bgSize="100%"
         flexDirection="column"
+        objectFit="cover"
       >
         <Navbar />
         <FormControl />
