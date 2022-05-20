@@ -12,6 +12,7 @@ import {
   Divider,
   SliderMark,
   Tooltip,
+  Link,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -19,6 +20,8 @@ const FormControl = () => {
   const [sliderValue, setSliderValue] = useState(1000);
 
   const [sliderValue2, setSliderValue2] = useState(4);
+
+  const formateado = sliderValue.toLocaleString("en");
 
   return (
     <>
@@ -39,7 +42,9 @@ const FormControl = () => {
 
           <Center m="10px 0px 30px 0px">
             <Text>Monto: </Text>
-            <Text textColor="blue"> ${sliderValue}</Text>
+            <Text textColor="blue.500" fontWeight="semibold">
+              &nbsp; ${formateado}.00
+            </Text>
           </Center>
 
           <Center w="85%" mt="5">
@@ -61,9 +66,9 @@ const FormControl = () => {
                 color="white"
                 placement="top"
                 isOpen
-                label={`$ ${sliderValue}`}
+                label={`$ ${formateado}.00`}
               >
-                <SliderThumb />
+                <SliderThumb bg="blue.300" />
               </Tooltip>
             </Slider>
             <Text>$600000</Text>
@@ -71,8 +76,8 @@ const FormControl = () => {
 
           <Center m="10px 0px 30px 0px">
             <Text>Plazo: </Text>
-            <Text textColor="orange">
-              {""} {sliderValue2} quincenas
+            <Text textColor="orange" fontWeight="semibold">
+              &nbsp; {sliderValue2} quincenas
             </Text>
           </Center>
 
@@ -85,7 +90,7 @@ const FormControl = () => {
               min={4}
               max={48}
               m="0 15px 0 15px"
-              colorScheme="red"
+              colorScheme="orange"
               step={4}
             >
               <SliderTrack>
@@ -93,13 +98,13 @@ const FormControl = () => {
               </SliderTrack>
               <Tooltip
                 hasArrow
-                bg="red.500"
+                bg="orange"
                 color="white"
                 placement="top"
                 isOpen
                 label={`${sliderValue2}`}
               >
-                <SliderThumb />
+                <SliderThumb bg="orange" />
               </Tooltip>
             </Slider>
             <Text>48</Text>
@@ -120,7 +125,7 @@ const FormControl = () => {
             >
               <Text>Préstamo</Text>
               <Spacer />
-              <Text textColor="blue">${sliderValue}</Text>
+              <Text>${formateado}.00</Text>
             </Flex>
             <Divider />
             <Flex
@@ -131,7 +136,7 @@ const FormControl = () => {
             >
               <Text>Plazo</Text>
               <Spacer />
-              <Text textColor="blue">{sliderValue2} quincenas</Text>
+              <Text>{sliderValue2} quincenas</Text>
             </Flex>
             <Divider />
             <Flex
@@ -142,20 +147,28 @@ const FormControl = () => {
             >
               <Text>Interés</Text>
               <Spacer />
-              <Text textColor="blue">Interés</Text>
+              <Text>Interés</Text>
             </Flex>
             <Divider />
             <Flex alignItems="space-between" w="100%" p="5px 7.5%  5px 7.5%">
               <Text fontWeight="bold">Mónto total a pagar</Text>
               <Spacer />
-              <Text textColor="blue" fontWeight="bold">
-                ${sliderValue}
-              </Text>
+              <Text>${formateado}.00</Text>
             </Flex>
           </VStack>
-          <Button colorScheme="blue" m="5px">
+          <Link
+            w="150px"
+            py="2.5"
+            bg="blue.400"
+            color="white"
+            textAlign="center"
+            borderRadius="5"
+            _hover={{ textDecoration: "none", bg: "blue.500" }}
+            href="solicitud-credito"
+            fontWeight="semibold"
+          >
             ¡SOLICITALO YA!
-          </Button>
+          </Link>
         </Center>
       </Flex>
     </>

@@ -1,0 +1,60 @@
+{
+  "BarRoute": [
+    { "id": "1", "title": "Datos Generales" },
+    {
+      "id": "2",
+      "title": "Dirección"
+    },
+    {
+      "id": "3",
+      "title": "Información Financiera"
+    }
+  ],
+  "DatosGenerales": [
+    {
+      "idInput": "NombreInput",
+      "title": "Nombre(s)",
+      "error": "Ingresa tu nombre",
+      "type": "text"
+    },
+    {
+      "idInput": "ApellidoPInput",
+      "title": "Apellido paterno",
+      "error": "Ingresa tu apellido paterno",
+      "type": "text"
+    },
+    {
+      "idInput": "ApellidoMInput",
+      "title": "Apellido materno",
+      "error": "Ingresa tu apellido materno",
+      "type": "text"
+    },
+    {
+      "idInput": "CurpInput",
+      "title": "CURP",
+      "error": "El campo CURP debe contener al menos 18 caractéres",
+      "type": "text"
+    },
+    {
+      "idInput": "CorreoInput",
+      "title": "Correo electrónico",
+      "error": "Ingresa tu correo electrónico",
+      "type": "email"
+    },
+    {
+      "idInput": "FechaInput",
+      "title": "Fecha de Nacimiento",
+      "error": "Ingresa tu fecha de nacimiento",
+      "type": "date"
+    }
+  ],
+
+  "Direccion": {
+    "id": "2",
+    "title": "Dirección"
+  },
+  "InfoFinanciera": {
+    "id": "3",
+    "title": "Información Financiera"
+  }
+}
